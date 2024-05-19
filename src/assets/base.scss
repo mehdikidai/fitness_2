@@ -21,6 +21,10 @@ a{
     text-decoration: none;
 }
 
+li{
+    list-style: none;
+}
+
 body {
     min-height: 100vh;
     background: var(--color-background);

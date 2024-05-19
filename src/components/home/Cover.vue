@@ -19,14 +19,15 @@ export default {};
 
 <style lang="scss" scoped>
 .cover {
-    height: 100dvh;
+    height: 650px;
     //background: red;
     background-image:linear-gradient(to right, #00000000, black), url("@/assets/images/bgCover.jpg");
 
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: top center;
+    background-position: top center,center;
     position: relative;
+    //background-attachment: fixed;
     // &::before{
     //     content: "";
     //     position: absolute;

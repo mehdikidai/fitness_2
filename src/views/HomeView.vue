@@ -5,6 +5,8 @@
     <TitVue text="how am i"/>
     <HowAmI/>
     <Space/>
+    <TitVue text="Transformations"/>
+    <Space/>
     
 </template>
 
