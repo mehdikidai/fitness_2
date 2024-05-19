@@ -1,0 +1,17 @@
+@use "./scss/size";
+@import './base.scss';
+
+
+.container{
+    width: 100vw;
+    max-width: size.$w-desktop;
+    //background: blue;
+    margin: 0 auto;
+    padding-inline: 20px;
+}
+
+.slider_box{
+    .splide__pagination,.splide__arrow{
+        display: none;
+    }
+}
