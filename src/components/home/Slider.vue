@@ -46,18 +46,20 @@ export default {
 //@use "./../../scss/color";
 .slider_box {
     height: 40px;
-    background: #1d1d1d;
+    background: #0e0e0e;
     //background: linear-gradient(90deg, rgba(255,121,24,1) 0%, rgba(255,181,24,1) 100%);
+    z-index: 99;
     h4 {
         line-height: 40px;
         text-transform: uppercase;
         font-size: 16px;
         color: #000;
-        color: white;
+        color: rgba(255, 255, 255, 0.6);
         
         span{
             //background: red;
             margin-inline: 10px;
+            color: var(--color-main);
         }
     }
 }

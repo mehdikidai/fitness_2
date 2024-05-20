@@ -17,18 +17,22 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
+@use "@/assets/scss/media";
+
 header {
     height: 70px;
-    background: var(--color-background);
+    //background: var(--color-background);
     position: fixed;
     inset: 0;
-    z-index: 99;
+    z-index: 90;
+    background: rgba(9, 7, 7, 0.70);
+    backdrop-filter: blur(10px);
     nav {
         height: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        .logo{
+        .logo {
             color: #fff;
             font-size: 24px;
             text-transform: uppercase;
@@ -37,10 +41,52 @@ header {
         .ul_box {
             display: flex;
             gap: calc(var(--space) * 2.5);
-            a{
+            a {
                 color: #fff;
-                &.router-link-active{
+                text-transform: uppercase;
+                &.router-link-active {
                     color: #0a80d9;
+                }
+            }
+        }
+    }
+}
+
+@include media.media(phone) {
+    header {
+        nav {
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            .logo {
+                color: #fff;
+                font-size: 22px;
+                text-transform: uppercase;
+                font-weight: 600;
+            }
+            .ul_box {
+                position: fixed;
+                height: 100vh;
+                top: 0;
+                left: -70vw;
+                width: 70vw;
+                z-index: 99;
+                background: var(--color-background);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding-inline: var(--space);
+                &.active {
+                    left: 0;
+                }
+                a {
+                    color: #fff;
+                    font-size: 22px;
+                    &.router-link-active {
+                        color: #0a80d9;
+                    }
                 }
             }
         }

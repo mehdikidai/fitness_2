@@ -16,10 +16,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@use "@/assets/scss/media";
 .tit {
     height: 160px;
     //background: rgb(20, 56, 255);
-
     .container {
         display: flex;
         align-items: center;
@@ -46,6 +46,24 @@ export default {
             background: linear-gradient( to left,rgba(255, 255, 255, 0.1) , rgba(0, 0, 0, 0));
             background-clip: text;
             -webkit-text-fill-color: transparent;
+        }
+    }
+}
+
+@include media.media(phone) {
+    .tit{
+        //display: none;
+        //background: red;
+        overflow: hidden;
+        height: 50px;
+        .container{
+            h2{
+                font-size: 22px;
+            }
+            span{
+                font-size: 30px !important;
+                display: none !important;
+            }
         }
     }
 }

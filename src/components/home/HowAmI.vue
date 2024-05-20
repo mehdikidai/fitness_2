@@ -1,7 +1,7 @@
 <template>
     <div class="how-am-i container">
         <div class="box">
-            <img :src="howAmiPhoto" alt="x">
+            <img :src="howAmiPhoto" alt="x" />
         </div>
         <div class="box">
             <h3>Who's Med Zakc?</h3>
@@ -33,6 +33,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@use "@/assets/scss/media";
 .how-am-i {
     //height: 200px;
     //background: red;
@@ -42,8 +43,8 @@ export default {
     .box {
         height: 550px;
         background: rgb(14, 14, 14);
-        &:nth-child(1){
-            img{
+        &:nth-child(1) {
+            img {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
@@ -70,6 +71,45 @@ export default {
                 }
             }
         }
+    }
+}
+
+@include media.media(phone) {
+    .how-am-i {
+        //height: 200px;
+        //background: red;
+        display: grid;
+        grid-template-columns: 1fr;
+        .box {
+        height: 550px;
+        &:nth-child(1) {
+            height: calc(100vw - 40px);
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        &:nth-child(2) {
+            padding-inline: calc(var(--space) * 1);
+            padding-block: calc(var(--space) * 1);
+            display: flex;
+            flex-direction: column;
+            gap: var(--space);
+            h3 {
+                font-size: 24px;
+            }
+            p {
+                font-size: 14px;
+            }
+            ul {
+                li {
+                    line-height: 30px;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
     }
 }
 </style>

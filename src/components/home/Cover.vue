@@ -18,6 +18,9 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
+
+@use '@/assets/scss/media';
+
 .cover {
     height: 650px;
     //background: red;
@@ -72,5 +75,18 @@ export default {};
             color: #fff;
         }
     }
+}
+
+@include media.media(phone) {
+    .cover{
+        //display: none;
+        .content{
+            padding-inline: var(--space);
+            h1{
+                font-size: 30px;
+            }
+        }
+    }
+     
 }
 </style>
