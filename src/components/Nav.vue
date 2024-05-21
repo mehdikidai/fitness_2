@@ -43,7 +43,7 @@ header {
             gap: calc(var(--space) * 2.5);
             a {
                 color: #fff;
-                text-transform: uppercase;
+                text-transform: capitalize;
                 &.router-link-active {
                     color: #0a80d9;
                 }
