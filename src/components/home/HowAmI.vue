@@ -1,9 +1,6 @@
 <template>
     <div class="how-am-i container">
         <div class="box">
-            <img :src="howAmiPhoto" alt="x" />
-        </div>
-        <div class="box">
             <h3>Who's Med Zakc?</h3>
             <p>
                 I’m Mohamed zaki, a certified trainer who puts his knowledge and
@@ -12,7 +9,23 @@
                 personalized detailed nutrition and training programs based on
                 many informations you share with me. See below for more details.
             </p>
+    
+        </div>
+        <div class="box">
+            <img :src="howAmiPhoto" alt="x" />
+        </div>
+        <div class="box">
+            <h3>Who's Med Zakc?</h3>
+            <!-- <p>
+                I’m Mohamed zaki, a certified trainer who puts his knowledge and
+                experience to help people over 3 years ago to achieve thier
+                goals , bulk , lose fat , lean bulk gain muscle. I create
+                personalized detailed nutrition and training programs based on
+                many informations you share with me. See below for more details.
+            </p> -->
             <ul>
+                <li>Lorem ipsum dolor sit.</li>
+                <li>Lorem ipsum dolor sit.</li>
                 <li>Lorem ipsum dolor sit.</li>
                 <li>Lorem ipsum dolor sit.</li>
                 <li>Lorem ipsum dolor sit.</li>
@@ -38,36 +51,43 @@ export default {
     //height: 200px;
     //background: red;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    //gap: var(--space);
+    grid-template-columns: 1fr 1fr 1fr;
+    //grid-template-rows: max-content;
+    gap: var(--space);
     .box {
-        height: 550px;
+        //height: 550px;
         background: rgb(14, 14, 14);
-        &:nth-child(1) {
+        clip-path: inset(0 0 0 round 6px);
+        &:nth-child(2) {
             img {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
             }
         }
-        &:nth-child(2) {
+        &:nth-child(3),&:nth-child(1) {
             padding-inline: calc(var(--space) * 1.5);
             padding-block: calc(var(--space) * 3);
             display: flex;
             flex-direction: column;
             gap: calc(var(--space) * 1.5);
             h3 {
-                font-size: 33px;
+                font-size: 25px;
                 color: var(--color-main);
             }
             p {
                 line-height: 30px;
                 color: rgba(255, 255, 255, 0.6);
+                font-size: 14px;
             }
             ul {
                 li {
-                    color: #fff;
+                    color: rgba(255, 255, 255, 0.6);
                     line-height: 30px;
+                    font-size: 14px;
+                    list-style: square;
+                    position: relative;
+                    left: 12px;
                 }
             }
         }
@@ -80,10 +100,11 @@ export default {
         //background: red;
         display: grid;
         grid-template-columns: 1fr;
+        grid-template-rows: max-content 300px max-content;
         .box {
-        height: 550px;
+        //height: 550px;
         &:nth-child(1) {
-            height: calc(100vw - 40px);
+            //height: calc(100vw - 40px);
             img {
                 width: 100%;
                 height: 100%;

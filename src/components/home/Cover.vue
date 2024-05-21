@@ -71,8 +71,9 @@ export default {};
         }
         a{
             background: var(--color-main);
-            padding: 10px 20px;
+            padding: 10px 26px;
             color: #fff;
+            clip-path: inset(0 0 0 round 6px);
         }
     }
 }

@@ -7,12 +7,11 @@
     </div>
 </template>
 
-<script>
-export default {
-    props: {
-        text: String,
-    },
-};
+<script setup>
+
+import { defineProps } from "vue"
+const props = defineProps(['text'])
+
 </script>
 
 <style lang="scss" scoped>

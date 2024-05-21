@@ -5,7 +5,10 @@
             v-for="photo in dataPhoto"
             :key="photo.id"
         >
-            <img @click="showImg" :src="photo.download_url" alt="" />
+            <img :src="photo.download_url" alt="" />
+            <button @click="showImg(photo.download_url)" class="show_img">
+                <i class="material-symbols-outlined">add</i>
+            </button>
         </div>
     </div>
     <div class="photos container" v-else>
@@ -13,19 +16,41 @@
             <LoadingIcon />
         </div>
     </div>
+    <!-- <div class="modal" v-if="isOpen" @click="hiddenModel">
+
+    </div> -->
+    <ModalBox :open="isOpen" @Hidden="hiddenModel">
+        <div class="boxImg">
+            <img :src="imgActive" alt="">
+        </div>
+    </ModalBox>
 </template>
 
 <script setup>
 import LoadingIcon from "@/components/icons/LoadingIcon.vue";
 import { ref, onMounted } from "vue";
 import axios from "axios";
+import ModalBox from "../Modal.vue";
+
+
 
 
 const dataPhoto = ref([]);
+const isOpen = ref(false)
+const imgActive = ref(null)
 
-const showImg = () => {
-    alert("hi");
+const showImg = (img) => {
+    console.log(img)
+    isOpen.value = true
+    imgActive.value = img
 };
+
+const hiddenModel = (e) =>{
+    console.log(e)
+    //e.target.className === "modal" ? isOpen.value = false : null
+    isOpen.value = false
+    
+}
 
 onMounted(async () => {
     const a = await axios("https://picsum.photos/v2/list?page=4&limit=8");
@@ -37,6 +62,22 @@ onMounted(async () => {
 
 <style lang="scss" scoped>
 @use "@/assets/scss/media";
+
+.boxImg{
+    width: calc(100vw - 40px);
+    max-width: 650px;
+    aspect-ratio: 1;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    //clip-path: inset(0 0 0 round 6px);
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
 .photos {
     //background: red;
     height: auto;
@@ -50,7 +91,9 @@ onMounted(async () => {
         display: flex;
         align-items: center;
         justify-content: center;
-        clip-path: inset(0 0 0 round 0px);
+        //clip-path: inset(0 0 0 round 0px);
+        clip-path: inset(0 0 0 round 6px);
+        position: relative;
         img {
             object-fit: cover;
             width: 100%;
@@ -61,6 +104,27 @@ onMounted(async () => {
                 transform: scale(1);
             }
         }
+        .show_img{
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            cursor: pointer;
+            width: 24px;
+            height: 24px;
+            border: none;
+            border-radius: 50%;
+            background: var(--color-main);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all .3s ease-in-out;
+            i{
+                font-size: 16px;
+                color: #fff;
+            }
+        }
+
+        
     }
     .photo_error {
         background: #0e0e0e;

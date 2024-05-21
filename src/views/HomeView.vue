@@ -14,6 +14,8 @@
     <Space/>
     <ServicesHome/>
     <Space/>
+    <TitVue text="Pro coaching services"/>
+    <Space/>
     
 </template>
 
