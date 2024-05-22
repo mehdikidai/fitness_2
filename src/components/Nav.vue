@@ -7,13 +7,33 @@
                 <router-link to="/about">About</router-link>
                 <router-link to="/services">services</router-link>
                 <router-link to="/contact">Contact</router-link>
+                <router-link to="/contact">{{
+                    $t("message.hello")
+                }}</router-link>
+
+                <select v-model="$i18n.locale" @change="changerLang">
+                    <option
+                        v-for="locale in $i18n.availableLocales"
+                        :key="`locale-${locale}`"
+                        :value="locale"
+                    >
+                        {{ locale }}
+                    </option>
+                </select>
             </div>
         </nav>
     </header>
 </template>
 
-<script>
-export default {};
+<script setup>
+
+
+const changerLang = (e) => {
+   
+    console.log(e.target.value)
+   
+}
+
 </script>
 
 <style lang="scss" scoped>
@@ -25,7 +45,7 @@ header {
     position: fixed;
     inset: 0;
     z-index: 90;
-    background: rgba(9, 7, 7, 0.70);
+    background: rgba(9, 7, 7, 0.7);
     backdrop-filter: blur(10px);
     nav {
         height: 100%;

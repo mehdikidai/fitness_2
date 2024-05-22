@@ -1,0 +1,9 @@
+{
+    "message": {
+        "hello": "hello"
+    },
+    "contact":"contact",
+    "home":"home",
+    "about":"about",
+    "services":"services"
+}

@@ -8,7 +8,7 @@
                 Dignissimos itaque dicta eos repellat totam porro cupiditate
                 maiores odio odit architecto.
             </p>
-            <router-link to="/contact">Contact</router-link>
+            <router-link to="/contact">{{ $t('contact') }}</router-link>
         </div>
     </div>
 </template>
@@ -74,6 +74,7 @@ export default {};
             padding: 10px 26px;
             color: #fff;
             clip-path: inset(0 0 0 round 6px);
+            text-transform: capitalize;
         }
     }
 }
