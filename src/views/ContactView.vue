@@ -1,15 +1,13 @@
 <template>
-    <div>
-       <h1>contact</h1>
-    </div>
+    <DefaultLayouts>
+        <div>
+            <h1>contact</h1>
+        </div>
+    </DefaultLayouts>
 </template>
 
-<script>
-    export default {
-        
-    }
+<script setup>
+import DefaultLayouts from "./../layouts/DefaultLayouts.vue";
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

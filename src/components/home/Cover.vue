@@ -52,7 +52,7 @@ export default {};
         padding-inline: 10rem;
         span{
             color: var(--color-main);
-            font-size: 40px;
+            font-size: 50px;
             text-transform: capitalize;
             font-weight: 600;
             font-family: "Shadows Into Light", cursive;

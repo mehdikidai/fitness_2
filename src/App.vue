@@ -1,16 +1,9 @@
 <template>
-    <DefaultLayouts>
-        <router-view />
-    </DefaultLayouts>
+    <router-view />
 </template>
 
 <script>
-import DefaultLayouts from "./layouts/DefaultLayouts.vue";
-export default {
-    components: {
-        DefaultLayouts,
-    },
-};
+export default {};
 </script>
 
 <style lang="scss" scoped></style>
