@@ -1,6 +1,7 @@
 <template>
     <div class="photos container" v-if="dataPhoto.length > 0">
         <div
+           v-motion-fade-visible
             class="photo_box tagline"
             v-for="photo in dataPhoto"
             :key="photo.id"
@@ -20,8 +21,8 @@
 
     </div> -->
     <ModalBox :open="isOpen" @Hidden="hiddenModel">
-        <div class="boxImg">
-            <img :src="imgActive" alt="" />
+        <div class="boxImg" id="boxImg" data-tilt>
+            <img :src="imgActive" alt=""  />
         </div>
     </ModalBox>
 </template>
@@ -32,9 +33,12 @@ import { ref, onMounted } from "vue";
 import axios from "axios";
 import ModalBox from "../Modal.vue";
 
+
+
 const dataPhoto = ref([]);
 const isOpen = ref(false);
 const imgActive = ref(null);
+
 
 const showImg = (img) => {
     isOpen.value = true;
@@ -46,6 +50,7 @@ const hiddenModel = () => {
     isOpen.value = false;
     document.body.style.overflow = "auto";
 };
+
 
 onMounted(async () => {
     const a = await axios("https://picsum.photos/v2/list?page=4&limit=8");

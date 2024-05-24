@@ -1,10 +1,12 @@
 <template>
     <div class="cover">
         <div class="content container">
-            <span>Biozakcteam</span>
-            <h1>{{ $t('cover title 1') }}</h1>
-            <p>{{ $t('cover title 2') }}</p>
-            <router-link to="/contact">{{ $t('contact') }}</router-link>
+            <span v-motion-slide-visible-right>Biozakcteam</span>
+            <h1  v-motion-slide-visible-left >
+                {{ $t("cover title 1") }}
+            </h1>
+            <p v-motion-slide-visible-right>{{ $t("cover title 2") }}</p>
+            <router-link to="/contact">{{ $t("contact") }}</router-link>
         </div>
     </div>
 </template>
@@ -14,17 +16,17 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
-
-@use '@/assets/scss/media';
+@use "@/assets/scss/media";
 
 .cover {
     height: 650px;
     //background: red;
-    background-image:linear-gradient(to right, #00000000, black), url("@/assets/images/bgCover.jpg");
+    background-image: linear-gradient(to right, #00000000, black),
+        url("@/assets/images/bgCover.jpg");
 
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: top center,center;
+    background-position: top center, center;
     position: relative;
     //background-attachment: fixed;
     // &::before{
@@ -46,7 +48,7 @@ export default {};
         justify-content: center;
         gap: calc(var(--space) * 1);
         padding-inline: 10rem;
-        span{
+        span {
             color: var(--color-main);
             font-size: 50px;
             text-transform: capitalize;
@@ -65,7 +67,7 @@ export default {};
             color: #fff;
             line-height: 30px;
         }
-        a{
+        a {
             background: var(--color-main);
             padding: 10px 26px;
             color: #fff;
@@ -76,15 +78,14 @@ export default {};
 }
 
 @include media.media(phone) {
-    .cover{
+    .cover {
         //display: none;
-        .content{
+        .content {
             padding-inline: var(--space);
-            h1{
+            h1 {
                 font-size: 30px;
             }
         }
     }
-     
 }
 </style>

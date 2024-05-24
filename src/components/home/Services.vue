@@ -1,6 +1,6 @@
 <template>
     <div class="services container">
-        <div class="service headline" v-for="item in dataServices" :key="item.id">
+        <div v-motion-fade-visible  class="service headline" v-for="item in dataServices" :key="item.id">
             <span class="price_title">{{ item.title }}</span>
             <h4 class="price"> {{ item.price }} <span>Dh</span></h4>
             <ul>
