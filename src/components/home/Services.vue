@@ -16,8 +16,10 @@
 
 <script setup>
 
+
 import axios from 'axios';
 import { ref,onMounted } from 'vue'
+
 
 
 const dataServices = ref([])
@@ -28,7 +30,7 @@ onMounted(async ()=>{
 
     a.status === 200 ? dataServices.value = a.data : null
 
-
+    
 })
 
 

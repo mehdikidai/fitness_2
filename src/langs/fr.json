@@ -4,6 +4,9 @@
     },
     "contact": "contact",
     "home": "accueil",
-    "about": "à propos",
-    "services": "services"
+    "about": "propos",
+    "services": "services",
+    "cover title 1":"Le Lorem Ipsum est simplement du faux.",
+    "cover title 2": "Vous voulez changer votre corps ? Devenir un athlète professionnel ? Pourquoi pas, cliquez ici !"
+    
 }

@@ -2,12 +2,8 @@
     <div class="cover">
         <div class="content container">
             <span>Biozakcteam</span>
-            <h1>Lorem, ipsum dolor sit amet consectetur.</h1>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Dignissimos itaque dicta eos repellat totam porro cupiditate
-                maiores odio odit architecto.
-            </p>
+            <h1>{{ $t('cover title 1') }}</h1>
+            <p>{{ $t('cover title 2') }}</p>
             <router-link to="/contact">{{ $t('contact') }}</router-link>
         </div>
     </div>
